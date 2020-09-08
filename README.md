@@ -22,6 +22,8 @@ _Example 40: expand the single related Customer only if it is an instance of Mod
 http://host/service/Orders?$expand=Customer/Model.VipCustomer
 ```
 
+---
+
 Based on my repro only scenario in Example 39 appeared to work for me.
 ```
 http://localhost:32522/odata/Customers?$filter=NS.Models.VipCustomer/LoyaltyCardNo eq '9876543210'
@@ -29,13 +31,13 @@ http://localhost:32522/odata/Customers?$filter=NS.Models.VipCustomer/LoyaltyCard
 
 The following appear not to work:
 
-### Scenario in Example 36:
+#### Scenario in Example 36:
 ```
 http://localhost:32522/odata/Customers/NS.Models.VipCustomer
 ```
 Responds with a 404 yet there's 1 `VipCustomer` instance
 
-### Scenario in Example 37:
+#### Scenario in Example 37:
 ```
 http://localhost:32522/odata/Customers/Model.VipCustomer(2)
 ```
@@ -45,7 +47,7 @@ http://localhost:32522/odata/Customers(1)/NS.Models.VipCustomer
 ```
 Returns a response yet customer with `Id` 1 is not a `VipCustomer`. It should respond with a 404
 
-### Scenario in Example 40:
+#### Scenario in Example 40:
 ```
 http://localhost:32522/odata/Orders?$expand=Customer/NS.Models.Customer
 ```

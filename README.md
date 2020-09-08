@@ -1,6 +1,8 @@
 <!-- markdownlint-disable MD002 MD041 -->
 Repro for OData Web Api issue [#1870](https://github.com/OData/odata.net/issues/1870)
 
+***
+
 Based on OData spec, section [4.11 Addressing Derived Types](http://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/cs02/odata-data-aggregation-ext-v4.0-cs02.html#_Toc435016582), here's what is expected:
 
 _Example 36: entity set restricted to VipCustomer instances_

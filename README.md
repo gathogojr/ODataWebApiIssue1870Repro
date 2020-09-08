@@ -54,10 +54,9 @@ Returns a response yet customer with `Id` 1 is not a `VipCustomer`. It should re
 http://localhost:32522/odata/Orders?$expand=Customer/NS.Models.Customer
 ```
 Returns an error:
-```The query specified in the URI is not valid. Found a path traversing multiple navigation properties. Please rephrase the query such that each expand path contains only type segments and navigation properties.```
+> The query specified in the URI is not valid. Found a path traversing multiple navigation properties. Please rephrase the query such that each expand path contains only type segments and navigation properties.```
 Inner error:
-```
-Found a path traversing multiple navigation properties. Please rephrase the query such that each expand path contains only type segments and navigation properties.
-```
+> Found a path traversing multiple navigation properties. Please rephrase the query such that each expand path contains only type segments and navigation properties.
+
 
 The issue the customer reported is based on this last scenario

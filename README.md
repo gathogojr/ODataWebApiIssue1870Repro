@@ -33,7 +33,7 @@ _Example 36: entity set restricted to VipCustomer instances_
 http://localhost:32522/odata/Customers/NS.Models.VipCustomer
 ```
 
-_Example 37: entity restricted to a VipCustomer instance, resulting in 404 Not Found if the customer with key 1 is not a VipCustomer_
+_Example 39: filter expression with type cast; will evaluate to null for all non-VipCustomer instances and thus return only instances of VipCustomer_
 ```
 http://localhost:32522/odata/Customers?$filter=NS.Models.VipCustomer/LoyaltyCardNo eq '9876543210'
 ```

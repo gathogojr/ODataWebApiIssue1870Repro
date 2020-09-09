@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNet.OData;
+using Microsoft.AspNetCore.Mvc;
 using NS.Models;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace NS.Controllers
 {
-    public class OrdersController
+    public class OrdersController : ODataController
     {
         private static readonly List<Order> _orders = new List<Order>
         {
@@ -45,9 +46,9 @@ namespace NS.Controllers
         }
 
         [EnableQuery]
-        public SingleResult<Order> Get([FromODataUri] int key)
+        public IActionResult Get([FromODataUri] int key)
         {
-            return SingleResult.Create(_orders.Where(d => d.Id.Equals(key)).AsQueryable());
+            return Ok(_orders.FirstOrDefault(d => d.Id == key));
         }
     }
 }
